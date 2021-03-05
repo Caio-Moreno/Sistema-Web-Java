@@ -137,7 +137,7 @@
 					<c:forEach items="${produtos}" var="produto">
                       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-3 mt-3">
                           <div class="item">
-                              <img class="img-thumbnail" src="https://gaston.vteximg.com.br/arquivos/ids/275370-1000-1000/2001099525_Ampliada.jpg?v=637086393512900000" alt="" />
+                              <img class="img-thumbnail" src="${produto._path}" alt="" />
       
                               
                                   <div class="text-center">

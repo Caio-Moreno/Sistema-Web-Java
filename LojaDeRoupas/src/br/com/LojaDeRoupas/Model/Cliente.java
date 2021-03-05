@@ -224,6 +224,19 @@ public void setSexo(String sexo) {
 	this.sexo = sexo;
 }
 
+
+public Integer getID_CLIENTE() {
+	return ID_CLIENTE;
+}
+
+
+
+public void setID_CLIENTE(Integer iD_CLIENTE) {
+	ID_CLIENTE = iD_CLIENTE;
+}
+
+
+
 @Override
 public String toString() {
 	// TODO Auto-generated method stub

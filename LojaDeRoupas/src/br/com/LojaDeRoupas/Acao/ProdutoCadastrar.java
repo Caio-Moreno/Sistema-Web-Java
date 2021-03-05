@@ -28,8 +28,10 @@ public class ProdutoCadastrar implements Acao  {
 		Integer quantidade = Integer.valueOf(request.getParameter("quantidade"));
 		double valorCompra = Double.parseDouble(request.getParameter("valorCompra"));
 		double valorVenda = Double.parseDouble( request.getParameter("valorVenda"));
+		
+		String path = "Imagens/" + tipo + ".jpg";
 		System.out.println("vou 2"+codFilial+" "+nome+" "+tipo+" "+quantidade+" "+valorCompra+" "+valorVenda);
-		produto produto = new produto(codFilial, nome,tipo,quantidade,valorCompra, valorVenda);
+		produto produto = new produto(codFilial, nome,tipo,quantidade,valorCompra, valorVenda,path);
 		System.out.println(produto);
 		produtoDAO.inserirProduto(produto);
 		} catch (SQLException e) {
