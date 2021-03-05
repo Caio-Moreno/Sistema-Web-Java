@@ -39,7 +39,7 @@ public class produto {
     	this._path = path; 
     }
     
-    public produto(int codFilial,int codProduto, String nome, String tipo, int quantidade, double valorCompra, double valorVenda) {
+    public produto(int codFilial,int codProduto, String nome, String tipo, int quantidade, double valorCompra, double valorVenda,String path) {
     	this._codFilial = codFilial;
     	this._codProduto = codProduto;
     	this._nome = nome;
@@ -47,6 +47,7 @@ public class produto {
     	this._quantidade = quantidade;
     	this._valorCompra = valorCompra;
     	this._valorVenda = valorVenda;
+    	this._path = path;
     }
     
     public produto(int codProduto, String nome, String tipo, int quantidade, double valorCompra, double valorVenda,String filial,String path) {
@@ -73,6 +74,8 @@ public class produto {
     	this._filial = filial;
     }
     
+
+    
     
     
     
@@ -80,7 +83,7 @@ public class produto {
 
     @Override
     public String toString() {
-        return "produto{" + "_codFilial=" + _codFilial + ", _codProduto=" + _codProduto + ", _nome=" + _nome + ", _tipo=" + _tipo + ", _quantidade=" + _quantidade + ", _valorCompra=" + _valorCompra + ", _valorVenda=" + _valorVenda + '}';
+        return "produto{" + "_codFilial=" + _codFilial + ", _codProduto=" + _codProduto + ", _nome=" + _nome + ", _tipo=" + _tipo + ", _quantidade=" + _quantidade + ", _valorCompra=" + _valorCompra + ", _valorVenda=" + _valorVenda + ", _filial"+ _filial + ", _status"+ _status + ", _path " +_path+ '}';
     }
 
 	public int get_codFilial() {

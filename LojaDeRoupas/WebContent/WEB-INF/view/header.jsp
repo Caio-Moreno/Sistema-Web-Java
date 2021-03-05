@@ -40,6 +40,8 @@
 		  <c:if test = "${sessionScope.usuario.tipo == 'G'}">
 		  <a class="dropdown-item" href="/LojaDeRoupas/entrada?acao=ProdutoConsultar">Produtos</a>
 		  </c:if>
+  		  <a class="dropdown-item" href="/LojaDeRoupas/entrada?acao=ProdutosVenda">Venda</a>
+  		
 		  
         </div>
       </li>

@@ -8,6 +8,9 @@
 <script src="Jquery/jquery-3.5.1.min.js" ></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 <link href="css/cartao.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
@@ -79,7 +82,7 @@ function calculaDesconto(){
 		total = total - descontar;
 		total = parseFloat(total.toFixed(2));
 		document.getElementById('desconto').value = descontar;
-		document.getElementById('total').value = total;
+		document.getElementById('valor_Total').value = total;
 		return;
 	}
 	if(valorDesconto == 5){
@@ -87,7 +90,7 @@ function calculaDesconto(){
 		total = total - descontar;
 		total = parseFloat(total.toFixed(2));
 		document.getElementById('desconto').value = descontar;
-		document.getElementById('total').value = total;
+		document.getElementById('valor_Total').value = total;
 		return;
 	}
 	if(valorDesconto == 10){
@@ -95,7 +98,7 @@ function calculaDesconto(){
 		total = total - descontar;
 		total = parseFloat(total.toFixed(2));
 		document.getElementById('desconto').value = descontar;
-		document.getElementById('total').value = total;
+		document.getElementById('valor_Total').value = total;
 		return;
 	}
 	if(valorDesconto == 15){
@@ -103,7 +106,7 @@ function calculaDesconto(){
 		total = total - descontar;
 		total = parseFloat(total.toFixed(2));
 		document.getElementById('desconto').value = descontar;
-		document.getElementById('total').value = total;
+		document.getElementById('valor_Total').value = total;
 		return;
 	}
 	
@@ -153,18 +156,10 @@ function calcularTroco(){
         </div>
       </li>
       
-      <li class="nav-item dropdown no-arrow" style="margin-left: 1235px;">
-        <a class="nav-link" href="#" id="userDropdown" role="button">
-          <i class="fa fa-sign-out" data-toggle="modal" data-target="#logoutModal" aria-hidden="true"></i>
-        </a>
-       <!--  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Configurações</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-         -->
-      </li>
+      
+     
     </ul>
+    
   </div>
 </nav>
 <br>
@@ -181,7 +176,7 @@ function calcularTroco(){
 <form action="/LojaDeRoupas/entrada?acao=VendaCadastrar" method="post">
     <div class="form-group">
       <label for="cpf">CPF Cliente</label>
-      <input type="text" class="form-control" id="cpf" placeholder="CPF">
+      <input type="text" class="form-control" id="cpf" placeholder="CPF" required="required">
       <a onclick="buscaCliente()"><i class="fa fa-search" aria-hidden="true"></i></a>
     </div>
     <div class="form-group">
@@ -337,7 +332,7 @@ function calcularTroco(){
         </div>
         <div class="field-container">
             <label for="cardnumber">Card Number</label> <span id="generatecard">Gerar automático</span>
-            <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
+            <input id="cardnumber" type="text" >
             <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -345,11 +340,11 @@ function calcularTroco(){
         </div>
         <div class="field-container">
             <label for="expirationdate">Expiration (mm/yy)</label>
-            <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
+            <input id="expirationdate" type="text" >
         </div>
         <div class="field-container">
             <label for="securitycode">Security Code</label>
-            <input id="securitycode" type="text" pattern="[0-9]*" maxlength="3" inputmode="numeric">
+            <input id="securitycode" type="text"  maxlength="3">
         </div>
     </div>
     </section>
@@ -379,7 +374,7 @@ function calcularTroco(){
 
 
 
-
+ 
     
     </div>
 </body>

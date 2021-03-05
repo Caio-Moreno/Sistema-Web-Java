@@ -2,7 +2,7 @@ package br.com.LojaDeRoupas.Model;
 
 import java.util.Date;
 
-public class Vendedor extends funcionario implements IAutenticavel {
+public class Vendedor extends funcionario {
 
 	
 	
@@ -26,17 +26,6 @@ public class Vendedor extends funcionario implements IAutenticavel {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void Login() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void Logout() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	
 	

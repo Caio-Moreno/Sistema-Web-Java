@@ -40,6 +40,7 @@ public class produtoDAO {
     		String filial = rs.getString("ESTADO");
     		String path = rs.getString("PATH");
 			System.out.println(nome);
+			System.out.println(codProduto);
 		listaProdutos.add(new produto(codProduto,nome,tipo,quantidade,valorCompra,valorVenda,filial,path));
 			
     	}
@@ -81,7 +82,7 @@ public class produtoDAO {
     
     public static void atualizarProduto(produto produto) throws SQLException {
     	System.out.println("atualizarPrdoutoDAO");
-    	String sqlUpdate = "UPDATE PRODUTO a inner join ESTOQUE b on a.ID_PRODUTO = b.COD_PRODUTO_FK set a.COD_FILIAL = ?, a.NOME = ?, a.TIPO = ?, a.VALOR_COMPRA = ?, a.VALOR_VENDA =?, b.QUANTIDADE = ? WHERE ID_PRODUTO= ?";
+    	String sqlUpdate = "UPDATE PRODUTO a inner join ESTOQUE b on a.ID_PRODUTO = b.COD_PRODUTO_FK set a.COD_FILIAL = ?, a.NOME = ?, a.TIPO = ?, a.VALOR_COMPRA = ?, a.VALOR_VENDA =?, a.PATH =?, b.QUANTIDADE = ? WHERE ID_PRODUTO= ?";
     	
     	try{
     		Connection con = ConexaoDB.getConnection();
@@ -94,8 +95,9 @@ public class produtoDAO {
     		ps.setString(3, produto.get_tipo());
     		ps.setDouble(4, produto.get_valorCompra());
     		ps.setDouble(5, produto.get_valorVenda());
-    		ps.setInt(6, produto.get_quantidade());
-    		ps.setInt(7, produto.get_codProduto());
+    		ps.setString(6, produto.get_path());
+    		ps.setInt(7, produto.get_quantidade());
+    		ps.setInt(8, produto.get_codProduto());
     		
     		System.out.println("UPDATE AQUI ---->"+ ps);
     		
@@ -112,7 +114,7 @@ public class produtoDAO {
 		
 		produto produto = null;
 
-    	String sqlConsulta = "SELECT ID_PRODUTO,NOME, TIPO,QUANTIDADE, VALOR_COMPRA,VALOR_VENDA,ESTADO FROM PRODUTO a INNER JOIN  ESTOQUE b  ON ID_PRODUTO = b.COD_PRODUTO_FK INNER JOIN FILIAL c ON c.ID_FILIAL = a.COD_FILIAL WHERE ID_PRODUTO = ?;";
+    	String sqlConsulta = "SELECT ID_PRODUTO,NOME, TIPO,QUANTIDADE, VALOR_COMPRA,VALOR_VENDA,ESTADO,PATH FROM PRODUTO a INNER JOIN  ESTOQUE b  ON ID_PRODUTO = b.COD_PRODUTO_FK INNER JOIN FILIAL c ON c.ID_FILIAL = a.COD_FILIAL WHERE ID_PRODUTO = ?;";
     	
     	try {
     		
@@ -134,11 +136,17 @@ public class produtoDAO {
     		double valorCompra = rs.getDouble("VALOR_COMPRA");
     		double valorVenda = rs.getDouble("VALOR_VENDA");
     		String filial = rs.getString("ESTADO");
+    		String path = rs.getString("PATH");
+			System.out.println(nome);
+			System.out.println(codProduto);
+			produto =	new produto(codProduto,nome,tipo,quantidade,valorCompra,valorVenda,filial,path);
     		
     		System.out.println("MINHA QUANTIDADE------->"+quantidade);
 			
 		produto = new produto(nome,codProduto,tipo,quantidade,valorCompra,valorVenda,filial);
 			System.out.println(produto+" novo");
+		 
+			
     	}
     	
     	}catch (SQLException e) {

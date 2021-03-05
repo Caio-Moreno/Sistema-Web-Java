@@ -8,12 +8,12 @@ import java.util.Properties;
 public class ConexaoDB {
 
 	private static Connection connection = null;
-        private String url;
+    private String url;
 	private String user;
 	private String password;
 	
 	
-	public ConexaoDB(String url, String user, String password) {
+	public ConexaoDB() {
         this.url = url;
         this.user = user;
         this.password = password;

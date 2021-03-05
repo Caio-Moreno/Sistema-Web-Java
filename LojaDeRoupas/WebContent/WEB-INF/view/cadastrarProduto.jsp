@@ -271,11 +271,11 @@ window.onload = function () {
       <input type="text" class="form-control" id="valorVenda" name="valorVenda">
     </div>
   </div>
+
    <button type="submit" class="btn btn-primary">OK</button>
 </form>
 </c:if>
-
-
+	
 <c:if test="${not empty action}">
 	<form action= "/LojaDeRoupas/entrada?acao=ProdutoAlterar&metodo=post" method="post">
   <div class="form-row">

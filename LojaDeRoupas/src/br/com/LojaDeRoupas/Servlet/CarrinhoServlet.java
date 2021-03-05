@@ -26,10 +26,16 @@ public class CarrinhoServlet extends HttpServlet {
 		System.out.println("CARRINHO");
 		boolean jaTem = false;
 		boolean jaFez = false;
+		
 		Integer id = Integer.valueOf(request.getParameter("id"));
+		System.out.println("MEU ID CARRINHO-->"+id);
 		String action = request.getParameter("action");
+		
 		produto produto = produtoDAO.buscaProdutoPorId(id);
+		System.out.println("ACHEI O PRODUTO"+produto);
+		
 		Carrinho carrinho = new  Carrinho(produto.get_codProduto(), produto.get_nome(), produto.get_valorVenda(),1);
+		
 		
 		HttpSession sessao = request.getSession();
 		
@@ -56,13 +62,15 @@ public class CarrinhoServlet extends HttpServlet {
 				
 			}else {
 				if(!jaFez) {
+					
 					if (listaCarrinho.get(i).get_id() == carrinho.get_id()) {
 						listaCarrinho.get(i).set_preco(listaCarrinho.get(i).get_preco() - carrinho.get_preco());
 						listaCarrinho.get(i).set_qtd(listaCarrinho.get(i).get_qtd() - carrinho.get_qtd());
 					
 						if(listaCarrinho.get(i).get_qtd() <= 0) { System.out.println("vou remover"); listaCarrinho.remove(i);  } //se zerar os produtos remover da lista
-						jaTem = true;
+						
 					}
+					jaTem = true;
 				}
 			}
 		  }

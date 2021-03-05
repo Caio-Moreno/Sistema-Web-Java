@@ -221,7 +221,7 @@ public class vendaDAO{
         	for(Carrinho c : listaVenda) {
         		System.out.println("INSERIR VENDA");
         		ps.setInt(1, id);
-        		ps.setInt(2, c.get_id());
+        		ps.setInt(2,2);
         		ps.setDouble(3, c.get_preco());
         		ps.setInt(4, c.get_qtd());
         		System.out.println("INSERT VENDA_HAS_PRODUTO----->" + ps);

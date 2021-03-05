@@ -58,7 +58,7 @@ public class ProdutoAlterar implements Acao {
 			try {
 			Integer codFilial = Integer.valueOf(request.getParameter("codFilial"));
 			System.out.println("Atualizando produto"+codFilial);
-			Integer codProduto = Integer.valueOf(request.getParameter("codProduto"));
+			Integer codProduto = Integer.valueOf(request.getParameter("ID_PRODUTO"));
 			System.out.println("Atualizando produto"+codProduto);
 			String nome = request.getParameter("nome");
 			System.out.println("Atualizando produto"+nome);
@@ -70,9 +70,10 @@ public class ProdutoAlterar implements Acao {
 			System.out.println("Atualizando produto");
 			double valorVenda = Double.parseDouble(request.getParameter("valorVenda"));
 			System.out.println("Atualizando produto");
-			System.out.println(codFilial+" "+codProduto+" "+nome+" "+tipo+" "+quantidade+" "+valorCompra+" "+valorVenda);
+			String path = "Imagens/" + tipo + ".jpg";
+			System.out.println(codFilial+" "+codProduto+" "+nome+" "+tipo+" "+quantidade+" "+valorCompra+" "+valorVenda+ "" + path);
 			
-			produto produto = new produto(codFilial,codProduto, nome,tipo,quantidade,valorCompra, valorVenda);
+			produto produto = new produto(codFilial,codProduto, nome,tipo,quantidade,valorCompra, valorVenda,path);
 			
 			System.out.println("O produto é esse"+produto);
 			

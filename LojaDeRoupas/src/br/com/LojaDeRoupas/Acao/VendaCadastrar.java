@@ -35,7 +35,7 @@ public class VendaCadastrar implements Acao{
 		String data_venda = request.getParameter("data_venda");
 		System.out.println("VENDA CADASTRAR");   
         Integer cod_cliente = Integer.parseInt(request.getParameter("cod_cliente"));
-        System.out.println("VENDA CADASTRAR");
+        System.out.println("VENDA CADASTRAR"+cod_cliente);
        Integer cod_filial = Integer.parseInt(request.getParameter("codFilial"));
        System.out.println("VENDA CADASTRAR");
         Integer quantidade = qtdProdutos;

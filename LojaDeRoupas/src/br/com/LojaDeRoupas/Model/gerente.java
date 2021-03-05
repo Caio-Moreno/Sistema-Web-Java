@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 
-public class gerente extends funcionario implements IAutenticavel{
+public class gerente extends funcionario {
     
     
 
@@ -50,20 +50,6 @@ public class gerente extends funcionario implements IAutenticavel{
 
 
 
-	@Override
-	public void Login() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-
-	@Override
-	public void Logout() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 
