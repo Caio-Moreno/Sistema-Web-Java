@@ -22,15 +22,7 @@ import br.com.LojaDeRoupas.Model.Venda;
 public class vendaDAO{
 	
 	private static final String DELETAR_VENDA = "DELETE FROM VENDA WHERE ID_VENDA= ? ";
-    private static final String CONSULTAR_VENDA = "\n"
-    		+ "Select ID_VENDA,C.NOME, F.ESTADO,a.QUANTIDADE, VALOR_TOTAL,DATA_VENDA from VENDA a \n"
-    		+ "inner join VENDA_HAS_PRODUTO b on a.ID_VENDA = b.COD_VENDA\n"
-    		+ "INNER JOIN FILIAL F ON F.ID_FILIAL = a.COD_FILIAL\n"
-    		+ "INNER JOIN PRODUTO P ON P.ID_PRODUTO = b.COD_PRODUTO\n"
-    		+ "INNER JOIN CLIENTE C ON C.ID_CLIENTE = a.COD_CLIENTE\n"
-    		+ "where 1 = 1\n"
-    		+ "group by ID_VENDA\n"
-    		+ "order by DATA_VENDA desc;";
+    private static final String CONSULTAR_VENDA = Select ID_VENDA,C.NOME, F.ESTADO,a.QUANTIDADE, VALOR_TOTAL,DATA_VENDA from VENDA a inner join VENDA_HAS_PRODUTO b on a.ID_VENDA = b.COD_VENDA INNER JOIN FILIAL F ON F.ID_FILIAL = a.COD_FILIAL INNER JOIN PRODUTO P ON P.ID_PRODUTO = b.COD_PRODUTO INNER JOIN CLIENTE C ON C.ID_CLIENTE = a.COD_CLIENTE where 1 = 1 group by ID_VENDA order by DATA_VENDA desc;";
     private static final String GET_VENDA = "SELECT * FROM VENDA WHERE  ID_VENDA= ? ";
     private static final String UPDATE_VENDA = "UPDATE VENDA SET DATA_VENDA = ?, COD_CLIENTE = ?, COD_PRODUTO = ?, COD_FILIAL = ?, QUANTIDADE = ?, DESCONTO = ?, VALOR_TOTAL = ? WHERE ID_VENDA = ? ";
     private static final String INSERIR_VENDA = "INSERT INTO VENDA (DATA_VENDA, COD_CLIENTE, COD_PRODUTO, COD_FILIAL, QUANTIDADE, DESCONTO, VALOR_TOTAL) VALUES (?, ?, ?, ?, ?, ?, ? ) ";

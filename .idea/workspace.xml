@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e744190-5b51-4318-88cb-a8a1a65d58a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LojaDeRoupas/WebContent/WEB-INF/view/listaProdutos.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/LojaDeRoupas/WebContent/WEB-INF/view/listaProdutos.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LojaDeRoupas/src/br/com/LojaDeRoupas/Dao/vendaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/LojaDeRoupas/src/br/com/LojaDeRoupas/Dao/vendaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +143,7 @@
       <updated>1603568356689</updated>
       <workItem from="1603568358030" duration="1142000" />
       <workItem from="1603997368217" duration="667000" />
+      <workItem from="1616717656793" duration="193000" />
     </task>
     <servers />
   </component>

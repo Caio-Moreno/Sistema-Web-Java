@@ -49,7 +49,7 @@ $(document).ready( function () {
     	    "info": "Mostrando página _PAGE_ de _PAGES_",
     	    "paginate": {
     	        "first":      "Primeira",
-    	        "last":       "Úlrima",
+    	        "last":       "Última",
     	        "next":       "Próxima",
     	        "previous":   "Anterior"
     	    },
